@@ -1,0 +1,54 @@
+<%
+    const folderUpload = './uploads/article/' ;
+%> 
+<% include ./../helpers/convert-to-slug %>
+
+
+<!-- ##### Hero Area Start ##### -->
+<div class="hero-area">
+    <!-- Hero Post Slides -->
+    <div class="hero-post-slides owl-carousel">
+
+        <!-- Single Slide -->
+        <div class="single-slide">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Single Blog Post Area -->
+                    <div class="col-12 col-md-6">
+                        <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
+                            <!-- Blog Thumbnail -->
+                            <div class="blog-thumbnail bg-overlay">
+                                <a href="#"><img src="<%= folderUpload + items[0].thumb %>" alt="Photo"></a>
+                            </div>
+
+                            <!-- Blog Content -->
+                            <div class="blog-content">
+                                <span class="post-date"><%= moment(items[0].created.time).format(systemConfig.formatDayTime) %></span>
+                                <a href="/article/<%= convertToSlug(items[0].category.name) %>/<%= items[0].slug %>" class="post-title"><%= items[0].name %></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <% for(let i = 1; i < items.length; i++){ %>
+                        <!-- Single Blog Post Area -->
+                        <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
+                            <!-- Blog Thumbnail -->
+                            <div class="blog-thumbnail bg-overlay">
+                                <a href="#"><img src="<%= folderUpload + items[i].thumb %>" alt=""></a>
+                            </div>
+
+                            <!-- Blog Content -->
+                            <div class="blog-content">
+                                <span class="post-date"><%= moment(items[i].created.time).format(systemConfig.formatDayTime) %></span>
+                                <a href="/article/<%= convertToSlug(items[i].category.name) %>/<%= items[i].slug %>" class="post-title"><%= items[i].name %></a>
+                            </div>
+                        </div>
+                        <% } %> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Hero Area End ##### -->

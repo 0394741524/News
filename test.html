@@ -1,0 +1,42 @@
+<div class="form-group">
+    <label>Content</label>
+    <textarea class="form-control" name="content" rows="2"
+        id="content_ck"><%= item.content %> </textarea>
+</div>
+<li><a href="/">Trang chủ</a></li>
+                                <li><a href="#">Danh mục</a>
+                                    <ul class="dropdown">
+                                        <% itemsCategory.forEach((item) =>{ %>
+                                            <li><a href="/category/<%= item.slug %>"><%= item.name %></a></li>
+                                        <% }) %>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Tin tức tổng hợp</a>
+                                    <ul class="dropdown">
+                                        <% generalNewsCategory.forEach((item) =>{ %>
+                                            <li><a href="/general-news/<%= item.slug %>"><%= item.category %></a></li>
+                                        <% }) %>
+                                    </ul>
+                                </li>
+                                <li><a href="/contact">Liên hệ</a></li>
+                                <!-- <li><a href="#">Danh mục</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Danh mục</a></li>
+                                        <li><a href="#">Danh mục</a></li>
+                                    </ul>
+                                </li> -->
+                                <%- showMenuUser(userInfo) %> 
+let coin = await rp({
+    method: 'GET',
+    uri: 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
+    qs:{
+      'start':'1',
+      'limit':'2',
+      'convert':'USD'
+    },
+    headers: {
+      'X-CMC_PRO_API_KEY': 'af236d21-5c29-4e32-9397-f7bfa6e7bf23',
+    },
+    json: true,
+    gzip:true
+  });

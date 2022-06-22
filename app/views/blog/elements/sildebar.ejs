@@ -1,0 +1,51 @@
+<div class="sidebar-area">
+    <!-- Newsletter Widget -->
+    <div class="single-widget-area newsletter-widget mb-30 pd-32">
+        <h5>Giá vàng <%= goldPrice[0].$.name %></h5>
+        <table class="table table-bordered table-hover text-nowrap btn-table mb-0">
+            <thead>
+                <tr>
+                    <th class="text-center">Loại vàng</th>
+                    <th class="text-center">Mua vào</th>
+                    <th class="text-center">Bán ra</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% goldPrice[0].item.forEach((item) =>{ %>
+                <tr>
+                    <td class="text-center" style="white-space: normal;"><%= item.$.type %></td>
+                    <td class="text-center"><%= item.$.buy %> vnd</td>
+                    <td class="text-center"><%= item.$.sell %> vnd</td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </div>
+    <!-- <div class="single-widget-area newsletter-widget mb-30 pd-32">
+        <h5>Giá coin</h5>
+        <table class="table table-bordered table-hover text-nowrap btn-table mb-0">
+            <thead>
+                <tr>
+                    <th class="text-center">Tên</th>
+                    <th class="text-center">Giá</th> -->
+                    <!-- <th class="text-center">Bán ra</th> -->
+                <!-- </tr>
+            </thead>
+            <tbody>
+                <%# for(let i = 0; i <10; i++) { %>
+                <tr>
+                    <td class="text-center" style="white-space: normal;"><%#= coinPrice[i][0] %></td>
+                    <td class="text-center">$<%#= coinPrice[i][1] %></td>
+                </tr>
+                <%#}%>
+            </tbody>
+        </table>
+    </div> -->
+
+    <!-- Add Widget -->
+    <!-- <div class="single-widget-area add-widget mb-30">
+        <a href="#">
+            <img src="/newsbox/img/bg-img/add3.png" alt="">
+        </a>
+    </div> -->
+</div>

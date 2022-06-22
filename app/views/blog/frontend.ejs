@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<% include ./elements/head %>
+</head>
+
+<body>
+	<% include ./elements/header %>
+	<% include ./elements/breaking-news %>
+	<!-- Start top-post Area -->
+	<% if(top_post == true){ %>
+		<% include ./elements/top_post %>
+	<% } %>
+	<!-- End top-post Area -->
+	<%- body %> 
+
+    <% include ./elements/footer %>
+	<% include ./elements/script %>
+</body>
+
+</html>
